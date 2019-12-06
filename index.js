@@ -7,6 +7,7 @@ const imageRouter = require("./image/router");
 const Image = require("./image/model");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const auth = require("./auth/router");
 
 const corsMiddleware = cors();
 app.use(corsMiddleware);
@@ -15,5 +16,6 @@ const parserMiddleware = bodyParser.json();
 app.use(parserMiddleware);
 
 app.use(imageRouter);
+app.use(auth);
 
 app.listen(port, () => console.log(`listening on ${port}`));
