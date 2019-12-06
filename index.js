@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 const db = require("./db");
 const imageRouter = require("./image/router");
-const Image = require("../server/image/model");
+const Image = require("./image/model");
 
 app.use(imageRouter);
 
